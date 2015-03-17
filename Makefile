@@ -59,3 +59,8 @@ Tools/firefox.exe:
 Tools/chrome.exe:
 	echo "You may need to download chrome for windows from https://www.google.com/chrome/browser/desktop/index.html?standalone=1"
 	test -f ChromeStandaloneSetup.exe && mv ChromeStandaloneSetup.exe $@
+
+Tools/chromedriver.exe:
+	curl -o chromedriver.zip -L "http://chromedriver.storage.googleapis.com/2.14/chromedriver_win32.zip"
+	unzip chromedriver.zip
+	test -f chromedriver.exe && mv chromedriver.exe $@
